@@ -15,7 +15,7 @@ app.use(express.json());  // Add this to parse JSON
 (async () => {
     try {
         // MongoDB connection
-        const mongoURI = "mongodb+srv://dhrurana96:DhruveshRana@cluster0.tsr3s.mongodb.net/" + DB_Name;
+        const mongoURI = "mongodb+srv://dhrurana96:A3I97iYp1aiuZOfc@cluster0.jdywl.mongodb.net/BizWise?retryWrites=true&w=majority&appName=Cluster0" + DB_Name;
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,

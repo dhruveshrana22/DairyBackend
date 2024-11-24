@@ -5,7 +5,7 @@ const { register, login, getUser } = require('../controllers/authController');
 const user = require('../modal/users');
 const auth = require("../middleware/auth");
 const { getProducts, createProduct, updateProduct, deleteProduct } = require('../controllers/productController');
-const { getCustomers, createCustomer, updateCustomer, deleteCustomer } = require('../controllers/Customer/customerController');
+const { getCustomers, createCustomer, updateCustomer, deleteCustomer, getDealers, createDealer, updateDealer, deleteDealer } = require('../controllers/Customer/customerController');
 
 // @route    GET /api/auth/user
 // @desc     Get user data by token
@@ -45,5 +45,10 @@ router.get('/customers', auth, getCustomers);
 router.post('/createCustomers', auth, createCustomer);
 router.put('/customers/:id', auth, updateCustomer);
 router.delete('/customers/:id', auth, deleteCustomer);
+// Dealer routes
+router.get('/dealers', auth, getDealers); // Get all dealers
+router.post('/createDealers', auth, createDealer); // Create a new dealer
+router.put('/dealers/:id', auth, updateDealer); // Update a dealer by ID
+router.delete('/dealers/:id', auth, deleteDealer); // Delete a dealer by ID
 
 module.exports = router;

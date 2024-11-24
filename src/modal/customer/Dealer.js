@@ -1,9 +1,7 @@
-// models/Customer.js
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const customerSchema = new mongoose.Schema({
+const dealerSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -23,8 +21,8 @@ const customerSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId, // Reference to the user
         ref: 'User', // This refers to the User model
-        required: true
+        required: true,
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Customer', customerSchema);
+module.exports = mongoose.model('Dealer', dealerSchema);

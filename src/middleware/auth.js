@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
     }
 
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
+        const decoded = jwt.verify(token, JWT_SECRET, { expiresIn: '12d' });
 
         req.user = decoded.user;
 

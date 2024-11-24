@@ -102,7 +102,7 @@ exports.login = async (req, res) => {
         jwt.sign(
             payload,
             JWT_SECRET,
-            { expiresIn: '1h' }, // Token valid for 1 hour
+            { expiresIn: '500h' }, // Token valid for 1 hour
             (err, token) => {
                 if (err) throw err;
                 res.json({ token }); // Return the JWT token
